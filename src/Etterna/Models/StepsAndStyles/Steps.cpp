@@ -465,7 +465,7 @@ Steps::DoATestThing(float ev, Skillset ss, float rate, Calc* calc) -> float
 	const auto& etaner = GetTimingData()->BuildAndGetEtaner(nerv);
 	const auto& cereal = m_pNoteData->SerializeNoteData(etaner);
 
-	auto newcalc = MinaSDCalc(cereal, rate, 0.93F, 4, calc);
+	auto newcalc = MinaSDCalc(cereal, rate, 0.975F, 4, calc);
 	auto last_msd = newcalc[ss];
 	const auto prev_vers = GetCalcVersion() - 1;
 	if (vh.count(prev_vers) != 0U) {
