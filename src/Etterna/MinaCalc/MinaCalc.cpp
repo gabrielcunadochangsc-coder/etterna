@@ -1007,7 +1007,7 @@ webcalc(Php::Parameters& parameters)
 			throw Php::Exception(e.what());
 		}
 
-		// ssr = calc->CalcMain(newVector, rate, min(wife, 0.965));
+		// ssr = calc->CalcMain(newVector, rate, min(wife, 0.9975));
 	}
 
 	Php::Value assoc;
