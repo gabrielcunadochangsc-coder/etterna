@@ -1,7 +1,7 @@
 <p align="center">
     <img src="Docs/images/etterna-logo-dark.svg" width=250px>
 </p>
-
+ 
 <p align=center>
     <a href="https://github.com/etternagame/etterna/actions"><img src="https://github.com/etternagame/etterna/workflows/Etterna%20CI/badge.svg"/></a>
     <a href="https://scan.coverity.com/projects/etternagame-etterna"><img src="https://img.shields.io/coverity/scan/12978.svg"/></a>
