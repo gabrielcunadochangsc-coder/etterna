@@ -192,7 +192,7 @@ Calc::CalcMain(const std::vector<NoteInfo>& NoteInfo,
 		 * 38 is still unachieved so a cap of 40 [sic] is _extremely_ generous
 		 * do this for SCORES only, not cached file difficulties */
 		if (ssr) {
-			static const auto ssrcap = 40.F;
+			static const auto ssrcap = 99.F;
 			for (auto& r : iteration_skillet_values) {
 				// so 50%s on 60s don't give 35s
 				r = downscale_low_accuracy_scores(r, score_goal);
@@ -889,7 +889,6 @@ MinaSDCalc(const std::vector<NoteInfo>& NoteInfo,
 	calc->ssr = true;
 	calc->debugmode = false;
 	calc->keycount = keycount;
-
 	return calc->CalcMain(NoteInfo, musicrate, min(goal, ssr_goal_cap));
 }
 
