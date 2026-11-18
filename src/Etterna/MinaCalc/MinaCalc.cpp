@@ -889,7 +889,7 @@ MinaSDCalc(const std::vector<NoteInfo>& NoteInfo,
 	calc->ssr = true;
 	calc->debugmode = false;
 	calc->keycount = keycount;
-	return calc->CalcMain(NoteInfo, musicrate, min(goal, ssr_goal_cap));
+	return calc->CalcMain(NoteInfo, musicrate, min(goal, 0.9975F));
 }
 
 // Wrap difficulty calculation for all standard rates
@@ -937,7 +937,7 @@ MinaSDCalcDebug(
 	calc.debugmode = true;
 	calc.ssr = true;
 	calc.keycount = keycount;
-	calc.CalcMain(NoteInfo, musicrate, min(goal, ssr_goal_cap));
+	calc.CalcMain(NoteInfo, musicrate, min(goal, 0.9975F));
 	make_debug_strings(calc, debugstrings);
 
 	handInfo.emplace_back(calc.debugValues.at(left_hand));
@@ -1001,7 +1001,7 @@ webcalc(Php::Parameters& parameters)
 			ssr =
 			  calc->CalcMain(newVector,
 							 rate,
-							 std::min(wife, static_cast<double>(ssr_goal_cap)));
+							 std::min(wife, static_cast<double>(0.9975F)));
 		} catch (std::exception& e) {
 			throw Php::Exception(e.what());
 		}
